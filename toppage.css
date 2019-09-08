@@ -82,6 +82,9 @@
             color: darksalmon;
             text-shadow: #000 2px 2px 2px;
         }
+        header h1 rt{
+            font-size: var(--font-size);
+        }
         header p{
             margin:0;
             font-size:var(--font-size);
