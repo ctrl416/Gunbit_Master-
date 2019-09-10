@@ -16,68 +16,192 @@
      -->
 </head>
 <body>
-    <div class="container">    
-            <div class="menu-container">
-                    <div class="menu">
-                      <ul>
-                        <li><a href="/"><ruby>NEWS<rt>新着情報</rt></ruby></a></li>
-                        <li><a href="/"><ruby>All Bit<rt>ビット一覧</rt></ruby></a></li>
-                        <li><a href="/"><ruby>Beginner<rt>初心者の心得</rt></ruby></a></li>
-                        <li><a href="/"><ruby>Others<rt>その他</rt></ruby></a></li>
-                      </ul>
-                    </div>
+    <div class="container">
+        <div class="top-header">
+            <div class="title-box">
+                <h1 class="main-title"><ruby>Gunbit Master<rt>ガンビット　マスター</rt></ruby></h1>
+                <p class="subtitle">攻略のclue,熱血のplayer,冷静にfight</p>
+            </div>
+            <ul class="i-group">
+                <i class="fas fa-home i-item"></i>
+                <i class="fas fa-info i-item info-icon"></i>
+                <div id="nav-drawer" class="i-item none">
+                    <input id="nav-input" type="checkbox" class="nav-unshown">
+                    <label id="nav-open" for="nav-input"><span></span><label>
+                    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                    <div id="nav-content">ここに中身を入れる</div>
                 </div>
-        <header>
-        <div class="title-box">
-            <h1 class="main-title"><ruby>Gunbit Master<rt>ガンビット　マスター</rt></ruby></h1>
-            <p class="subtitle">攻略のclue,熱血のplayer,冷静にfight</p>
+            </ul>
+
         </div>
+        <style>
+            
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+display: none;
+  display: inline-block;
+  width: 30px;
+  padding:12px 0 0 0;
+  height: 40px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+
+  position: absolute;
+  height: 6px;
+  width: 33px;
+  border-radius: 3px;
+  background: #07daff;
+  display: block;
+  content: '';
+  cursor: pointer;
+} 
+#nav-open span:before {
+  bottom: 10px;
+}
+#nav-open span:after {
+  bottom: -10px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+        </style>
+        <header>
                 <nav id="nav-pc" role="navigation">
                         <ul>
-                            <li><a href="/"><ruby>NEWS<rt>新着情報</rt></ruby></a></li>
+                            <li><a href="#"><ruby>NEWS<rt>新着情報</rt></ruby></a></li>
                             <li>
-                                <a href="/"><ruby>All Bit<rt>ビット一覧</rt></ruby></a>
+                                <a href="#"><ruby>All Bit<rt>ビット一覧</rt></ruby></a>
                                 <ul>
-                                    <li class="p-vehicle"><a href="/" >乗り物</a></li>
-                                    <li class="c-bit"><a href="/">アーサー</a></li>
-                                    <li class="c-bit"><a href="/">ホッパー</a></li>
-                                    <li class="c-bit"><a href="/">レッドドラゴソ</a></li>
-                                    <li class="c-bit"><a href="/">ゴーレマ</a></li>
-                                    <li class="c-bit"><a href="/">カタパルト</a></li>
-                                    <li class="p-monster"><a href="/">モンスター</a></li>
-                                    <li class="c-bit"><a href="/">ゾンビ</a></li>
-                                    <li class="c-bit"><a href="/">スライムキング</a></li>
-                                    <li class="c-bit"><a href="/">スケルトン</a></li>
-                                    <li class="c-bit"><a href="/">ゴブリンスレイヤー</a></li>
-                                    <li class="c-bit"><a href="/">オーク</a></li>
-                                    <li class="p-job"><a href="/">職業</a></li>
-                                    <li class="c-bit"><a href="/">エルフ</a></li>
-                                    <li class="c-bit"><a href="/">栽培士</a></li>
-                                    <li class="c-bit"><a href="/">勇者</a></li>
-                                    <li class="c-bit"><a href="/">警察官</a></li>
-                                    <li class="c-bit"><a href="/">自衛隊</a></li>
+                                    <li class="p-vehicle"><a href="#">乗り物</a></li>
+                                    <li class="c-bit"><a href="#">アーサー</a></li>
+                                    <li class="c-bit"><a href="#">ホッパー</a></li>
+                                    <li class="c-bit"><a href="#">レッドドラゴン</a></li>
+                                    <li class="c-bit"><a href="#">ゴーレム</a></li>
+                                    <li class="c-bit"><a href="#">カタパルト</a></li>
+                                    <li class="c-bit"><a href="#">もっとみる</a></li>
+                                    <li class="p-monster"><a href="#">モンスター</a></li>
+                                    <li class="c-bit"><a href="#">ゾンビ</a></li>
+                                    <li class="c-bit"><a href="#">スライム</a></li>
+                                    <li class="c-bit"><a href="#">スケルトン</a></li>
+                                    <li class="c-bit"><a href="#">ゴブリン</a></li>
+                                    <li class="c-bit"><a href="#">オーク</a></li>
+                                    <li class="c-bit"><a href="#">もっとみる</a></li>
+                                    <li class="p-job"><a href="#">職業</a></li>
+                                    <li class="c-bit"><a href="#">エルフ</a></li>
+                                    <li class="c-bit"><a href="#">栽培士</a></li>
+                                    <li class="c-bit"><a href="#">勇者</a></li>
+                                    <li class="c-bit"><a href="#">武闘家</a></li>
+                                    <li class="c-bit"><a href="#">戦士</a></li>
+                                    <li class="c-bit"><a href="#">もっとみる</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="/"><ruby>Beginner<rt>初心者の心得</rt></ruby></a>
+                                <a href="#"><ruby>Beginner<rt>初心者の心得</rt></ruby></a>
                                 <ul>
-                                    <li class="p-item"><a href="/">キーンの使い方</a></li>
-                                    <li class="p-item"><a href="/">メダルの育て方</a></li>
-                                    <li class="p-item"><a href="/">ビットの育て方</a></li>
+                                    <li class="p-item"><a href="#">キーンの使い方</a></li>
+                                    <li class="p-item"><a href="#">メダルの育て方</a></li>
+                                    <li class="p-item"><a href="#">ビットの育て方</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/"><ruby>Others<rt>その他</rt></ruby></a></li>
+                            <li><a href="#"><ruby>Others<rt>その他</rt></ruby></a></li>
                         </ul>
                     </nav>
         </header>
         <!-- パンくずリスト　トップページ無し 本記事サイトのみ　記事のタイトル上-->
         <!-- <div class="breadcrumbs">
             <ul>
-            <li><a href="/">例HOME</li>
+            <li><a href="#">例HOME</li>
             <li><a href="/seo/">例ビット一覧</li>
             <li><a href="/seo/seotaisaku/">例アーサー</li>
             </ul>
         </div> -->
+        <div class="recommend">
+            <h2>おすすめ記事</h2>
+            <div class="p-flex">
+                <section class="c-flex card"><img class="card-img" src="ganbit1.png" alt="dddd">
+                    <div class="card-content">
+                        <h5 class="card-title">新着記事１</h5>
+                        <p class="card-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </div>
+                </section>
+                <section class="c-flex card"><img class="card-img" src="ganbit2.jpg" alt="fff">
+                    <div class="card-content">
+                        <h5 class="card-title">新着記事１</h5>
+                        <p class="card-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </div>
+                </section>
+                <section class="c-flex card"><img class="card-img" src="" alt="">
+                    <div class="card-content">
+                        <h5 class="card-title">新着記事１</h5>
+                        <p class="card-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </div>
+                </section>
+                <section class="c-flex card hidden-item"><img class="card-img" src="" alt="">
+                    <div class="card-content">
+                        <h5 class="card-title">新着記事１</h5>
+                        <p class="card-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </div>
+                </section>
+                <section class="c-flex card hidden-item"><img class="card-img" src="" alt="">
+                    <div class="card-content">
+                        <h5 class="card-title">新着記事１</h5>
+                        <p class="card-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </div>
+                </section>
+            </div>
+
+        </div>
         <main class="mx-auto">
             <h2>新着記事</h2>
             <div class="p-flex">
@@ -211,7 +335,5 @@
         }
         </style>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
-    <script src="megamenu-custom.js"></script>
 </body>
 </html>

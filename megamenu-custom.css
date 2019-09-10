@@ -20,7 +20,7 @@ Screen style's
     display: none;
     width: 100%;
     margin: 0;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0);
 }
 
 .clip{
@@ -155,7 +155,7 @@ Screen style's
     box-sizing: border-box;
     padding: .2rem 0;
     font-size: 1.5rem;
-    color: #d314a3;
+    color: #d314a3!important;
     border: none;
     pointer-events: none;
 }
@@ -212,12 +212,13 @@ Mobile style's
 
 @media(max-width: 768px) {
     .menu{
-        display: block;
+        display: none;
+        /* display: block; */
         position: absolute;
         z-index: 1000;
         width: 100%;
-        margin: -83px 0 0 0;
-        background:rgba(0,0,0,0.8);
+        margin:0 0 0 0;
+        background:rgba(0,0,0);
     }
     .menu-mobile {
         display: block;
@@ -260,7 +261,7 @@ Mobile style's
     box-sizing: border-box;
     padding:0;
     font-size: 1rem;
-    color: #fff;
+    color: #fff!important;
     /* border-radius: 20px; */
     border: none;
     background: #d314a3;
