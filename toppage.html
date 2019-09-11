@@ -22,22 +22,24 @@
                 <h1 class="main-title"><ruby>Gunbit Master<rt>ガンビット　マスター</rt></ruby></h1>
                 <p class="subtitle">攻略のclue,熱血のplayer,冷静にfight</p>
             </div>
-            <ul class="i-group">
-                <i class="fas fa-home i-item"></i>
-                <i class="fas fa-info i-item info-icon"></i>
-                <div id="nav-drawer" class="i-item none">
+            <div class="i-group">
+                <a href="#" class="i-item"><i class="fas fa-home "></i></a>
+                <a href="#" class="i-item"><i class="fas fa-info "></i></a>
+                <div id="nav-drawer" class="i-item">
                     <input id="nav-input" type="checkbox" class="nav-unshown">
-                    <label id="nav-open" for="nav-input"><span></span><label>
+                    <!-- <label id="nav-open" for="nav-input"><span></span></label> -->
+                    <label id="nav-open" for="nav-input"><i class="fas fa-bars"></i></label>
                     <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-                    <div id="nav-content">ここに中身を入れる</div>
+                    <div id="nav-content">
+                        <h3></h3>
+                    </div>
                 </div>
-            </ul>
-
+            </div>
         </div>
         <style>
             
 #nav-drawer {
-  position: relative;
+  display: inline-block;
 }
 
 /*チェックボックス等は非表示に*/
@@ -47,33 +49,10 @@
 
 /*アイコンのスペース*/
 #nav-open {
-display: none;
   display: inline-block;
-  width: 30px;
-  padding:12px 0 0 0;
-  height: 40px;
+  padding:0px 0 0 0;
   vertical-align: middle;
 }
-
-/*ハンバーガーアイコンをCSSだけで表現*/
-#nav-open span, #nav-open span:before, #nav-open span:after {
-
-  position: absolute;
-  height: 6px;
-  width: 33px;
-  border-radius: 3px;
-  background: #07daff;
-  display: block;
-  content: '';
-  cursor: pointer;
-} 
-#nav-open span:before {
-  bottom: 10px;
-}
-#nav-open span:after {
-  bottom: -10px;
-}
-
 /*閉じる用の薄黒カバー*/
 #nav-close {
   display: none;/*はじめは隠しておく*/
