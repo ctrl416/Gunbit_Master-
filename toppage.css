@@ -21,7 +21,9 @@
   header {
     margin: 96px 0 0 0; }
   #nav-pc {
-    display: none; } }
+    display: none; }
+  #nav-drawer {
+    display: block !important; } }
 
 html {
   scroll-behavior: smooth; }
@@ -121,7 +123,7 @@ rt {
     color: #ff8800; }
 
 #nav-drawer {
-  display: inline-block; }
+  display: none; }
 
 /*チェックボックス等は非表示に*/
 .nav-unshown {
@@ -130,7 +132,7 @@ rt {
 /*アイコンのスペース*/
 #nav-open {
   display: inline-block;
-  padding: 0px 0 0 0;
+  padding: 0 0 0 0;
   vertical-align: middle; }
 
 /*閉じる用の薄黒カバー*/
@@ -204,6 +206,7 @@ rt {
   box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15); }
 
 .toggle {
+  display: none;
   height: 60px;
   text-align: center;
   position: fixed;

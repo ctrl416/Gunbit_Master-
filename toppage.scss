@@ -37,7 +37,6 @@
 
 }
 @media (max-width:768px){
-
     .recommend{
       margin: -24px auto 0 auto!important;
     }
@@ -50,6 +49,10 @@
     #nav-pc{
       display: none;
     }
+    #nav-drawer{
+      display: block!important;
+    }
+    
     
 }
 
@@ -157,7 +160,8 @@ rt {
   }
 
   #nav-drawer {
-    display: inline-block;
+    display: none;
+ 
   }
   
   /*チェックボックス等は非表示に*/
@@ -168,7 +172,7 @@ rt {
   /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
-    padding:0px 0 0 0;
+    padding:0 0 0 0;
     vertical-align: middle;
   }
   /*閉じる用の薄黒カバー*/
@@ -227,6 +231,7 @@ rt {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   } 
   .toggle{
+    display: none;
     height: 60px;
     text-align: center;
     position: fixed;
