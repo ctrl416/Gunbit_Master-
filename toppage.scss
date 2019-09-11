@@ -226,7 +226,22 @@ rt {
     transform: translateX(0%);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   } 
-
+  .toggle{
+    height: 60px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+  }
+  .navbar{
+    width: 100px;
+    height: 90px;
+    padding-top: 30px;
+    font-size: calc(1.8*var(--font-size));
+    color: #000;
+    background: #dad6d6;
+    border-radius: 30px;
+  }
 // **************トップヘッダー　エンド*********************
 /* ******************************************************** */
 /* ******************************************************** */
