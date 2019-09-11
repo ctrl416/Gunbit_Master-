@@ -31,70 +31,39 @@
                     <label id="nav-open" for="nav-input"><i class="fas fa-bars"></i></label>
                     <label class="nav-unshown" id="nav-close" for="nav-input"></label>
                     <div id="nav-content">
-                        <h3></h3>
+                        <h3><a href="#"><ruby>NEWS<rt>新着情報</rt></ruby></a></h3>
+                        <h3><a href="#"><ruby>All Bit<rt>ビット一覧</rt></ruby></a></h3>
+                        <h4><a href="#">乗り物</a></h4>
+                        <p class="c-bit"><a href="#">アーサー</a></p>
+                        <p class="c-bit"><a href="#">ホッパー</a></p>
+                        <p class="c-bit"><a href="#">レッドドラゴン</a></p>
+                        <p class="c-bit"><a href="#">ゴーレム</a></p>
+                        <p class="c-bit"><a href="#">カタパルト</a></p>
+                        <p class="c-bit"><a href="#">もっとみる</a></p>
+                        <h4><a href="#">モンスター</a></h4>
+                        <p class="c-bit"><a href="#">ゾンビ</a></p>
+                        <p class="c-bit"><a href="#">スライム</a></p>
+                        <p class="c-bit"><a href="#">スケルトン</a></p>
+                        <p class="c-bit"><a href="#">オーク</a></p>
+                        <p class="c-bit"><a href="#">ゴブリン</a></p>
+                        <p class="c-bit"><a href="#">もっとみる</a></p>
+                        <h4><a href="#">職業</a></h4>
+                        <p class="c-bit"><a href="#">栽培士</a></p>
+                        <p class="c-bit"><a href="#">エルフ</a></p>
+                        <p class="c-bit"><a href="#">勇者</a></p>
+                        <p class="c-bit"><a href="#">武闘家</a></p>
+                        <p class="c-bit"><a href="#">戦士</a></p>
+                        <p class="c-bit"><a href="#">もっとみる</a></p>
+                        <h3><a href="#"><ruby>Beginner<rt>初心者の心得</rt></ruby></a></h3>
+                        <p><a href="#">キーンの使い方</a></li>
+                        <p><a href="#">メダルの育て方</a></li>
+                        <p><a href="#">ビットの育て方</a></li>
+                        <h3><a href="#"><ruby>Others<rt>その他</rt></ruby></a></h3>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <style>
-            
-#nav-drawer {
-  display: inline-block;
-}
-
-/*チェックボックス等は非表示に*/
-.nav-unshown {
-  display:none;
-}
-
-/*アイコンのスペース*/
-#nav-open {
-  display: inline-block;
-  padding:0px 0 0 0;
-  vertical-align: middle;
-}
-/*閉じる用の薄黒カバー*/
-#nav-close {
-  display: none;/*はじめは隠しておく*/
-  position: fixed;
-  z-index: 99;
-  top: 0;/*全体に広がるように*/
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0;
-  transition: .3s ease-in-out;
-}
-
-/*中身*/
-#nav-content {
-  overflow: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;/*最前面に*/
-  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-  max-width: 330px;/*最大幅（調整してください）*/
-  height: 100%;
-  background: #fff;/*背景色*/
-  transition: .3s ease-in-out;/*滑らかに表示*/
-  -webkit-transform: translateX(-105%);
-  transform: translateX(-105%);/*左に隠しておく*/
-}
-
-/*チェックが入ったらもろもろ表示*/
-#nav-input:checked ~ #nav-close {
-  display: block;/*カバーを表示*/
-  opacity: .5;
-}
-
-#nav-input:checked ~ #nav-content {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);/*中身を表示（右へスライド）*/
-  box-shadow: 6px 0 25px rgba(0,0,0,.15);
-}
-        </style>
         <header>
                 <nav id="nav-pc" role="navigation">
                         <ul>
