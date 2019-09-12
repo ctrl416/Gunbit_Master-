@@ -435,6 +435,16 @@ header {
         font-weight: 900;
     }
 }
+.p-tool{
+  @extend .p-item;
+  font-size: calc(1.4*var(--font-size));
+  font-family: var(--noto);
+  &:before{
+      content: '\f552';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+  }
+}
 .c-bit{
     color: #ff7878;
     font-family: var(--noto);

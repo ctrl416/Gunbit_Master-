@@ -294,7 +294,7 @@ header {
           transition: all 0.5s;
           text-align: left; }
 
-.p-item, .p-vehicle, .p-monster, .p-job {
+.p-item, .p-vehicle, .p-monster, .p-job, .p-tool {
   font-family: var(--noto);
   font-size: calc(1.2*var(--font-size));
   background: #f03e3e !important;
@@ -303,11 +303,11 @@ header {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s; }
-  .p-item:hover, .p-vehicle:hover, .p-monster:hover, .p-job:hover {
+  .p-item:hover, .p-vehicle:hover, .p-monster:hover, .p-job:hover, .p-tool:hover {
     background: #ff7878 !important; }
-  .p-item > a, .p-vehicle > a, .p-monster > a, .p-job > a {
+  .p-item > a, .p-vehicle > a, .p-monster > a, .p-job > a, .p-tool > a {
     color: #000000; }
-    .p-item > a:hover, .p-vehicle > a:hover, .p-monster > a:hover, .p-job > a:hover {
+    .p-item > a:hover, .p-vehicle > a:hover, .p-monster > a:hover, .p-job > a:hover, .p-tool > a:hover {
       color: #fff; }
 
 .p-vehicle {
@@ -332,6 +332,14 @@ header {
   font-family: var(--noto); }
   .p-job:before {
     content: '\f0f0';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; }
+
+.p-tool {
+  font-size: calc(1.4*var(--font-size));
+  font-family: var(--noto); }
+  .p-tool:before {
+    content: '\f552';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900; }
 
