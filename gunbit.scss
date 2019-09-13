@@ -84,8 +84,13 @@
   margin-left: 0.5%;
   margin-right:0.5%;
 }
-
-
+// Font Awesome 用
+@mixin font-icon($num){
+  content: '#{$num}';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+// Font Awesome 用　エンド
 // mixin　*******************************************
 // おすすめ記事一覧と新着記事一覧で使用
 .hidden-item {
@@ -128,15 +133,16 @@
 }
 // ***************** メディアクエリ*************************************************** 
 /* ******************初期化****************************************************** */
+$gentium:'Gentium Basic';
+$dancing:'Dancing Script';
+$noto:'Noto Serif JP';
+$sawarabi:'Sawarabi Mincho';
 html {
   scroll-behavior: smooth; }
 :root {
   --font-size:16px;
-  --gentium: 'Gentium Basic';
-  --dancing: 'Dancing Script';
-  --noto:'Noto Serif JP';
-  --sawarabi: 'Sawarabi Mincho'; }
-$noto:'Noto `Serif JP';
+ }
+
 body {
 
   overflow-x: hidden;
@@ -172,7 +178,7 @@ a {
 }
 
 rt {
-  font-family: var(--noto);
+  font-family:$noto;
  }
 
 /* ******************初期化 エンド*********************************************************/
@@ -193,19 +199,19 @@ rt {
 .main-title {
   margin: 0;
   font-size: calc(2*var(--font-size));
-  font-family: var(--dancing);
+  font-family: $dancing;
   text-align: left;
   color: darksalmon;
   text-shadow: #000 2px 2px 2px; }
   .main-title>rt {
     font-size: calc(0.3*var(--font-size));
-    font-family: var(--sawarabi);
+    font-family: $sawarabi;
     font-style: italic; }
 
 .subtitle {
   margin: 0;
   font-size: calc(0.6*var(--font-size));
-  font-family: var(--noto);
+  font-family:$noto;
   color: darksalmon;
   text-align:left;
   text-shadow: #000 2px 2px 2px; }
@@ -225,99 +231,9 @@ rt {
     }
   }
 }
-
-  #nav-drawer {
-    display: none;
- 
-  }
-  
-  /*チェックボックス等は非表示に*/
-  .nav-unshown {
-    display:none;
-  }
-  
-  /*アイコンのスペース*/
-  #nav-open {
-    display: inline-block;
-    padding:0 0 0 0;
-    vertical-align: middle;
-  }
-  /*閉じる用の薄黒カバー*/
-  #nav-close {
-    display: none;/*はじめは隠しておく*/
-    position: fixed;
-    z-index: 99;
-    top: 0;/*全体に広がる*/
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0;
-    transition: .3s ease-in-out;
-  }
-  /****************************************************************************************/
-  /*************トップヘッダーの中身************************************************************/
-  /****************************************************************************************/ 
-  #nav-content {
-    overflow-x:hidden;
-    overflow-y:scroll;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 330px;/*最大幅（調整してください）*/
-    height: 100%;
-    background: #fff;/*背景色*/
-    text-align: center;
-    transition: .3s ease-in-out;/*滑らかに表示*/
-    transform: translateX(-105%);/*左に隠しておく*/
-    >h4{
-      margin:0 0 0 0;
-    }
-    >p{
-      list-style: none;
-      text-align: left;
-      margin: 0 0 0 0;
-      padding:0 0 0 20%;
-      font-size: calc(1.3*var(--font-size));
-    }
-  }
-  /*************トップヘッダーの中身エンド************************************************************/
-  /****************************************************************************************/
-  /****************************************************************************************/
-  /*チェックが入ったらもろもろ表示*/
-  #nav-input:checked ~ #nav-close {
-    display: block;/*カバーを表示*/
-    opacity: .5;
-  }
-  
-  #nav-input:checked ~ #nav-content {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);/*中身を表示（右へスライド）*/
-    box-shadow: 6px 0 25px rgba(0,0,0,.15);
-  } 
-  .toggle{
-    display: none;
-    height: 60px;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 10px;
-  }
-  .navbar{
-    width: 100px;
-    height: 90px;
-    padding-top: 30px;
-    font-size: calc(1.8*var(--font-size));
-    color: #000;
-    background: #dad6d6;
-    border-radius: 30px;
-  }
-// **************トップヘッダー　エンド***********************************************************
+/*******************トップヘッダー　エンド***********************************************************/
 /* ********************************************************************************************** */
-/* ********************************************************************************************** */
-/* ******************ヘッダー*************************************************************************** */
+/* ******************ヘッダー***************************************************************************************** */
 header {
   width: 100%;
   height: 500px;
@@ -329,7 +245,8 @@ header {
 }
 
 /* ***********************ヘッダー エンド*********************************************************************************/
-/* ***********************ナビ*************************************************************************************************** */
+/* ******************************************************************************************************** */
+/* ***********************ナビ********************************************************************************* */
 #nav-pc
 {   position:relative;   
     width: 100%;
@@ -381,7 +298,7 @@ header {
                 >li{
                     margin:0 0 0 -40px;
                     width:118%;
-                    font-family: var(--noto);
+                    font-family: $noto;
                     transition: all 0.5s; 
                     text-align: left;
                 }
@@ -391,7 +308,7 @@ header {
 
 }
 .p-item{
-    font-family: var(--noto);
+    font-family:$noto;
     font-size: calc(1.2*var(--font-size));
     padding:0 ;
     background: #f03e3e!important;
@@ -410,47 +327,38 @@ header {
 .p-vehicle {
     @extend .p-item;
     font-size: calc(1.4*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     &:before{
-        content: '\f747';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        color: #000000;
+      @include font-icon('\f747');
     }
 }
 .p-monster{
     @extend .p-item;
     font-size: calc(1.4*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     &:before{
-        content: '\f67b';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
+      @include font-icon('\f67b');
     }
 }
 .p-job{
     @extend .p-item;
     font-size: calc(1.4*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     &:before{
-        content: '\f0f0';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
+      @include font-icon('\f0f0');
     }
 }
 .p-tool{
   @extend .p-item;
   font-size: calc(1.4*var(--font-size));
-  font-family: var(--noto);
+  font-family:$noto;
   &:before{
-      content: '\f552';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
+    @include font-icon('\f552');
   }
 }
 .c-bit{
     color: #ff7878;
-    font-family: var(--noto);
+    font-family:$noto;
     &:hover{
         background: #dad6d6!important;
     }
@@ -458,9 +366,7 @@ header {
         color: #000;
     }
     &::after{
-        content: '\f101';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
+      @include font-icon('\f101');
     }
 }
 
@@ -482,23 +388,19 @@ header {
             font-size: 13px;
             >a{
               color: #000;
-              font-family: var(--noto);
+              font-family:$noto;
               &:hover{
                 color: #fd0909;
               }
             }
             &::before{
                 padding: 0 10px 0 0;
-                content: "\f105";
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
+                @include font-icon('\f105');
                 font-size: 14px;
             } 
             &:first-child::before{
                 padding: 0 3px 0 0;
-                content: "\f015";
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
+                @include font-icon('\f015');
                 font-size: 14px; 
             }
         }
@@ -507,8 +409,8 @@ header {
 /*************************パンくずリスト end*****************************************************************************/
 /* ***************************************************************************************************************** */
 
-/* ***********************メイン*************************************************************************************************** */
-// おすすめ********************************************
+/* **************************メイン************************************************************************************* */
+// **************************おすすめ********************************************
 .recommend{
   margin:auto auto;
   background: #000;
@@ -521,15 +423,15 @@ header {
   >h2{
     padding: 0;
     font-size: calc(1.7*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     letter-spacing: 0.5rem;
     padding:30px 0;
     background: lightblue; 
   }
 
 }
-// おすすめ エンド************************************
-// トップページ新着記事 ************************************
+// ***************************おすすめ エンド************************************
+// ***************************トップページ新着記事 ************************************
 main {
   width: 100%;
   height: 100%;
@@ -540,15 +442,15 @@ main {
   >h2{
     padding: 0;
     font-size: calc(1.7*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     letter-spacing: 0.5rem;
     padding:30px 0;
     background: lightblue;
   }
  }
 
- // トップページ新着記事 エンド************************************
- // ビット一覧 　　************************************
+ // **************************トップページ新着記事 エンド************************************
+ // **************************ビット一覧 　　************************************
  .main-container{
    box-sizing: border-box;
   @include row();
@@ -567,14 +469,14 @@ main {
     margin-top: 0;
     color: #ff9393;
     font-size: calc(1.7*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     letter-spacing: 0.5rem;
     padding: 30px 0;
     background: #63d5fc;
    }
    h3{
      color: #000;
-     font-family: var(--noto);
+     font-family:$noto;
    }
  }
  .bit-card-group{
@@ -597,13 +499,13 @@ main {
     margin:0 auto;
     color: #fff;
     font-size: calc(0.8*var(--font-size));
-    font-family: var(--noto);
+    font-family:$noto;
     background: #000;
    }
 
  }
-  // ビット一覧 　エンド************************************
-  // ヘルプ一覧　*****************************************
+  // ************************ビット一覧 　エンド************************************
+  // ************************ヘルプ一覧　*****************************************
 
   .help-main{
     margin-top:20px;
@@ -616,14 +518,14 @@ main {
      margin-top: 0;
      color: #ff9393;
      font-size: calc(1.7*var(--font-size));
-     font-family: var(--noto);
+     font-family:$noto;
      letter-spacing: 0.5rem;
      padding: 30px 0;
      background: #63d5fc;
     }
     h3{
       color: #000;
-      font-family: var(--noto);
+      font-family:$noto;
     }
   }
   .help-card-group{
@@ -635,7 +537,7 @@ main {
     margin-top:3px;
     margin-bottom: 3px;
     @include col-5();
-    font-family: var(--noto);
+    font-family:$noto;
     color: #007ab3;
     border-radius: 10px;
     background:linear-gradient(45deg,#fd6b6b,#ffeeee,#74ffff);
@@ -644,7 +546,7 @@ main {
     li{
       text-align: center;
       font-size: calc(1.4*var(--font-size));
-      font-family: var(--noto);
+      font-family:$noto;
       height: 100%;
       margin:10px auto;
     }
@@ -657,8 +559,8 @@ main {
 
 
 
-  // ヘルプ一覧　エンド*****************************************
-  // サイドバー 　************************************ 
+  // *************************ヘルプ一覧　エンド*****************************************
+  // ***************************サイドバー 　************************************ 
 aside{
   @include col-3();
     @include break-max(){
@@ -681,7 +583,7 @@ aside{
      }
    }
 }
- // サイドバー エンド************************************
+ // *****************************サイドバー エンド************************************
 section {
   display: block;
   margin: 0.5rem 0;
@@ -743,9 +645,6 @@ section {
   display: inline-block;
   margin: 0 2px;
   padding: 0;
-  display: inline-block;
-  background: -webkit-linear-gradient(45deg, #64d9ee, #ff7878);
-  background: -o-linear-gradient(45deg, #64d9ee, #ff7878);
   background: linear-gradient(45deg, #64d9ee, #ff7878);
   width: 50px;
   height: 50px;
@@ -783,12 +682,12 @@ footer {
           text-align: center; 
           >h1{
             font-size: calc(2*var(--font-size));
-            font-family: var(--dancing); 
+            font-family:$dancing; 
           }
            >p{
               margin-top: -20px;
               font-size: calc(0.7*var(--font-size));
-              font-family: var(--noto); 
+              font-family:$noto; 
           }
           >ul{
               margin: 30px 0; 
@@ -796,7 +695,7 @@ footer {
                 text-align: center;
                 margin: 10px auto;
                 font-size: calc(0.8*var(--font-size));
-                font-family: var(--noto);
+                font-family:$noto;
                 font-weight: 900;
                 color: #000; 
               }
@@ -804,14 +703,127 @@ footer {
 }
 .copyright {
   font-size: calc(0.6*var(--font-size));
-  font-family: var(--noto);
+  font-family:$noto;
   font-family: 900;
   color: #000000;
   text-shadow: #ffffff 2px 2px 2px;}
 
-/****************** フッターエンド ***************************************************************************/
-//************************ トップボタン************************************************************************************
-//************************ トップボタン*******************************************************************************************************
+/******************* フッターエンド ******************************************************************************/
+/********************リンク集********************************************************************/
+.link-group{
+  width: 100%;
+  height: 100%;
+  background: #000;
+  margin-bottom:0;
+  word-break: keep-all;
+  margin-bottom: -22px;
+}
+.link-item{
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #07daff;
+  font-family:$noto;
+  &::after{
+    @include font-icon('\f059');
+  }
+  &:hover{
+    color: #fd6b6b;
+  }
+
+}
+
+
+/********************リンク集 エンド********************************************************************/
+//*******************サイドナビゲーション********************************************************
+  #nav-drawer {
+    display: none;
+ 
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    padding:0 0 0 0;
+    vertical-align: middle;
+  }
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がる*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+
+  /*************サイドナビゲーションの中身*******************/
+  /*****************************************************/ 
+  #nav-content {
+    overflow-x:hidden;
+    overflow-y:scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    text-align: center;
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    transform: translateX(-105%);/*左に隠しておく*/
+    >h4{
+      margin:0 0 0 0;
+    }
+    >p{
+      list-style: none;
+      text-align: left;
+      margin: 0 0 0 0;
+      padding:0 0 0 20%;
+      font-size: calc(1.3*var(--font-size));
+    }
+  }
+  /*************サイドナビゲーションの中身エンド*****************/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  } 
+  .toggle{
+    display: none;
+    height: 60px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+  }
+  .navbar{
+    width: 100px;
+    height: 90px;
+    padding-top: 30px;
+    font-size: calc(1.8*var(--font-size));
+    color: #000;
+    background: #dad6d6;
+    border-radius: 30px;
+  }
+//サイドナビゲーション エンド***********************************************************************************
+//**************************************************************************************************************
+//トップボタン************************************************************************************
+
 
 #page_top{
   width: 100px;
@@ -857,7 +869,6 @@ left: 0;
 margin: auto;
 text-align: center;
 }
-//*******************************************************************************************************************************
-//************************ トップボタン エンド************************************************************************************
+// トップボタン エンド***********************************************************************************************
 
 
