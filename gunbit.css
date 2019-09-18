@@ -261,7 +261,7 @@ header {
 /******************* パンくずリスト *****************************************************************************/
 .breadcrumbs {
   width: 100%;
-  margin: 0;
+  margin: 0 0 30px 0;
   padding: 3px 0; }
   .breadcrumbs ul {
     list-style: none;
@@ -293,8 +293,6 @@ header {
 /* ***************************************************************************************************************** */
 /* **************************メイン************************************************************************************* */
 .recommend {
-  margin: auto auto;
-  background: #000;
   width: 100%;
   height: 100%;
   margin: 30px auto 0 auto;
@@ -340,7 +338,11 @@ main {
   text-align: center; }
 
 .all-bit-main {
-  margin-top: 20px;
+  pointer-events: none;
+  margin: 20px auto 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 69%;
   flex: 0 0 69%;
@@ -355,7 +357,7 @@ main {
       margin-left: 0.5%;
       margin-right: 0.5%; } }
   .all-bit-main h2 {
-    margin-top: 0;
+    margin-top: 0px;
     color: #ff9393;
     font-size: calc(1.7*var(--font-size));
     font-family: "Noto Serif JP";
@@ -363,6 +365,8 @@ main {
     padding: 30px 0;
     background: #63d5fc; }
   .all-bit-main h3 {
+    margin: 30px auto 0 auto;
+    padding: 30px 0;
     color: #000;
     font-family: "Noto Serif JP"; }
 
@@ -380,6 +384,7 @@ main {
   justify-content: space-between; }
 
 .bit-card {
+  pointer-events: auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-flex: 0;
@@ -403,6 +408,7 @@ main {
     background: #000; }
 
 .help-main {
+  pointer-events: none;
   margin-top: 20px;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 69%;
@@ -443,6 +449,7 @@ main {
   justify-content: space-between; }
 
 .help-card {
+  pointer-events: auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 3px;
@@ -472,6 +479,7 @@ main {
     background: #f5a6a6a8; }
 
 .master-main {
+  pointer-events: none;
   margin-top: 20px;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 69%;
@@ -512,6 +520,7 @@ main {
   justify-content: space-between; }
 
 .master-card {
+  pointer-events: auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 100%;
@@ -544,6 +553,7 @@ main {
   word-break: break-all; }
 
 .master-more-link {
+  pointer-events: auto;
   display: block;
   width: 100px;
   margin-right: 30px;
@@ -792,14 +802,22 @@ footer {
   -ms-transform: translateX(-105%);
   transform: translateX(-105%);
   /*左に隠しておく*/ }
-  #nav-content > h4 {
-    margin: 0 0 0 0; }
-  #nav-content > p {
+  #nav-content .side-nav-c-bit {
     list-style: none;
     text-align: left;
     margin: 0 0 0 0;
     padding: 0 0 0 20%;
-    font-size: calc(1.3*var(--font-size)); }
+    font-size: calc(1.3*var(--font-size));
+    color: #ff7878;
+    font-family: "Noto Serif JP"; }
+    #nav-content .side-nav-c-bit:hover {
+      background: #dad6d6; }
+    #nav-content .side-nav-c-bit:hover a {
+      color: #000; }
+    #nav-content .side-nav-c-bit::after {
+      content: "";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; }
 
 /*************サイドナビゲーションの中身エンド*****************/
 #nav-input:checked ~ #nav-close {
