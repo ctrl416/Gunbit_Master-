@@ -185,75 +185,89 @@ header {
       #nav-pc > ul > li:hover > a {
         color: #000; }
       #nav-pc > ul > li > ul {
-        width: 85%; }
+        width: 100%; }
         #nav-pc > ul > li > ul > li {
-          margin: 0 0 0 -40px;
-          width: 118%;
           font-family: "Noto Serif JP";
           -webkit-transition: all 0.5s;
           -o-transition: all 0.5s;
-          transition: all 0.5s;
-          text-align: left; }
+          transition: all 0.5s; }
 
 .p-item, .p-vehicle, .p-monster, .p-job, .p-tool {
+  margin: 0 0 0 0;
   font-family: "Noto Serif JP";
   font-size: calc(1.2*var(--font-size));
-  padding: 0;
-  background: #f03e3e !important;
-  text-align: center !important;
+  padding: 0 0 0 0;
+  color: #63d5fc;
+  background: #f03e3e;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s; }
-  .p-item:hover, .p-vehicle:hover, .p-monster:hover, .p-job:hover, .p-tool:hover {
-    background: #ff7878 !important; }
-  .p-item > a, .p-vehicle > a, .p-monster > a, .p-job > a, .p-tool > a {
-    color: #000000; }
-    .p-item > a:hover, .p-vehicle > a:hover, .p-monster > a:hover, .p-job > a:hover, .p-tool > a:hover {
-      color: #fff; }
+  .p-item > li, .p-vehicle > li, .p-monster > li, .p-job > li, .p-tool > li {
+    margin: 0 0 0 -40px;
+    color: #63d5fc;
+    text-align: center !important; }
+    .p-item > li:hover, .p-vehicle > li:hover, .p-monster > li:hover, .p-job > li:hover, .p-tool > li:hover {
+      color: #fff;
+      background: #ff7878 !important; }
 
 .p-vehicle {
   font-size: calc(1.4*var(--font-size));
   font-family: "Noto Serif JP"; }
-  .p-vehicle:before {
-    content: "";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
+  .p-vehicle > li {
+    color: #000;
+    background: #f03e3e !important; }
+    .p-vehicle > li:before {
+      content: "";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; }
 
 .p-monster {
   font-size: calc(1.4*var(--font-size));
   font-family: "Noto Serif JP"; }
-  .p-monster:before {
-    content: "";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
+  .p-monster > li {
+    color: #000;
+    background: #f03e3e !important; }
+    .p-monster > li:before {
+      content: "";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; }
 
 .p-job {
-  font-size: calc(1.4*var(--font-size));
+  font-size: calc(1.3*var(--font-size));
   font-family: "Noto Serif JP"; }
-  .p-job:before {
-    content: "";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
+  .p-job > li {
+    color: #000;
+    background: #f03e3e !important; }
+    .p-job > li:before {
+      content: "";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; }
 
 .p-tool {
   font-size: calc(1.4*var(--font-size));
   font-family: "Noto Serif JP"; }
-  .p-tool:before {
-    content: "";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
+  .p-tool > li {
+    color: #000;
+    background: #f03e3e !important; }
+    .p-tool > li:before {
+      content: "";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; }
 
 .c-bit {
   color: #ff7878;
   font-family: "Noto Serif JP"; }
-  .c-bit:hover {
-    background: #dad6d6 !important; }
-  .c-bit:hover a {
-    color: #000; }
-  .c-bit::after {
-    content: "";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
+  .c-bit > li {
+    margin: 0 0 0 -40px;
+    color: #ffffff;
+    text-align: center; }
+    .c-bit > li::after {
+      content: "";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900; }
+    .c-bit > li:hover {
+      color: #000000;
+      background: #ff7878 !important; }
 
 /* ***********************ナビ　エンド*********************************************************************************/
 /* ************************************************************************************************************************************ */
