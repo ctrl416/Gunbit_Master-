@@ -281,27 +281,33 @@ header {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        &::nth-child(1){
-            padding-left: 40px;
-      }
+        // &::nth-child(1){
+        //     padding-left: 40px;
+        //                 }
         >li{
             flex: 0 0 25%;
             justify-content: space-between;
             &:hover{
                 background: #ff7878; 
-            }
+                   }
+            >a{
+              overflow: hidden;
+              text-align: center!important;
+              padding:6% 36% 6% 36%;
+              
+              }
             &:hover >a{
                 color: #000;
-            }
+                      }
             >ul{
                 width:100%;
                 >li{
                     font-family: $noto;
                     transition: all 0.5s; 
                     
-                }
+                   }
+               }
             }
-        }
     }
 
 }
@@ -506,7 +512,6 @@ main {
  }
  .bit-card-group{
   @include row();
-  @include flex-bw();
  }
  .bit-card{
    pointer-events: auto;
