@@ -516,6 +516,9 @@ main {
  .bit-card{
    pointer-events: auto;
    box-sizing: border-box;
+   width:100%;
+   margin-top: 10px;
+   margin-bottom: 10px;
    @include col-2-5();
 
    background:#ffcdcd;    
@@ -634,6 +637,7 @@ main {
  }
  .master-card-title{
    width: 100%;
+   margin-top: 0;
    font-size: calc(1.2*var(--font-size));
    font-family: $noto;
    background: #ff9393;

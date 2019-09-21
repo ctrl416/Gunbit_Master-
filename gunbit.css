@@ -400,6 +400,9 @@ main {
   pointer-events: auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 24%;
   flex: 0 0 24%;
@@ -550,6 +553,7 @@ main {
 
 .master-card-title {
   width: 100%;
+  margin-top: 0;
   font-size: calc(1.2*var(--font-size));
   font-family: "Noto Serif JP";
   background: #ff9393;
